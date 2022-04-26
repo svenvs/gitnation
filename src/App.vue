@@ -13,7 +13,7 @@ export default {
   async mounted() {
     //does the post
     const { message } = await (await fetch(
-      '/contestor', 
+      '/api/contestor', 
       {
         method: 'post',
         headers: {
