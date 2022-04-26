@@ -7,28 +7,32 @@ module.exports = async function (context, req) {
         "Content-Type": "application/json"
       }
   }
-  // Read the uploaded task
-  //const newContester = req.body;
-  // Save to database
-//   const contest = await mongod.create({
-//     fullName: 'sven van Straalen',
-//     email: 'la@la.com',
-//     phone: '064634553',
-//     country: 'NL',
-//     profession: 'crazy',
-//     recruitment: true,
-// });
-
-const contest = await mongod.create({
-  fullName: req.body.fullName,
-  email: req.body.email,
-  phone: req.body.phone,
-  country: req.body.country,
-  profession: req.body.profession,
-  recruitment: req.body.recruitment,
-});
-  // Set the HTTP status to created
-  context.res.status = 201;
-  // return new object
-  context.res.body = contest;
+  if(req.body && 
+    req.body.fullName && 
+    req.body.email &&
+    req.body.phone && 
+    req.body.country &&
+    req.body.profession){
+      const contest = await mongod.create({
+        fullName: req.body.fullName,
+        email: req.body.email,
+        phone: req.body.phone,
+        country: req.body.country,
+        profession: req.body.profession,
+        recruitment: req.body.recruitment,
+      });
+      // Set the HTTP status to created
+      context.res.status = 201;
+      // return new object
+      context.res.body = {
+        message: 'stuff happely created',
+        contest
+      };
+  } else {
+    context.res.status = 403;
+    // return new object
+    context.res.body = {
+      message: 'data is wrong'
+    };
+  }
 }

@@ -11,7 +11,24 @@ export default {
     };
   },
   async mounted() {
-    const { message } = await (await fetch("/api/message?name=hello")).json();
+    //does the post
+    const { message } = await (await fetch(
+      '/contestor', 
+      {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: 'Willem Hengel',
+          email: 'WillemFishingForLive@rodHunting.com',
+          phone: '0658246985',
+          country: 'NL',
+          profession: 'fisherman',
+          recruitment: true,
+        }),
+      })).json();
+      //when done post the message
     this.message = message;
   }
 };
