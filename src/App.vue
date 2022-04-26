@@ -5,12 +5,8 @@
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input type="text" class="form-control" id="floatingFullName" placeholder="John Wick" v-model="fullName" name="fullName">
+        <label for="floatingFullName">Full name</label>
       </div>
 
       <div class="checkbox mb-3">
@@ -28,32 +24,36 @@ export default {
   name: "App",
   data() {
     return {
-      message: ""
+      message: "",
+      fullName: "",
+      phone: "",
+      country: "",
+      profession: "",
+      recruitment: ""
     };
   },
   methods: {
     async submitForm(e) {
       e.preventDefault();
-      console.log('yes hello');
-          //does the post
-    const { message } = await (await fetch(
-      '/api/contestor', 
-      {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: 'Willem Hengel',
-          email: 'WillemFishingForLive@rodHunting.com',
-          phone: '0658246985',
-          country: 'NL',
-          profession: 'fisherman',
-          recruitment: true,
-        }),
-      })).json();
-      //when done post the message
-    this.message = message;
+      //does the post
+      const { message } = await (await fetch(
+        '/api/contestor', 
+        {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            fullName: this.fullName,
+            email: this.email,
+            phone: this.phone,
+            country: this.country,
+            profession: this.profession,
+            recruitment: this.recruitment,
+          }),
+        })).json();
+        //when done post the message
+      this.message = message;
     }
   }
 };
