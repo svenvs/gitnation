@@ -6,7 +6,8 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get"
+        "get",
+        "post"
       ],
       "route": "message"
     },
@@ -14,6 +15,15 @@
       "type": "http",
       "direction": "out",
       "name": "res"
-    }
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "my-database",
+      "collectionName": "my-container",
+      "createIfNotExists": "false",
+      "connectionStringSetting": "CosmosDbConnectionString"
+  }
   ]
 }
