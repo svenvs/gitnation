@@ -9,6 +9,7 @@
     "dev": "swa start ./dist --api-location ./api"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.22.0",
     "core-js": "^3.6.4",
     "influence-design-system-testing": "^1.0.0",
     "vue": "^2.6.11"
