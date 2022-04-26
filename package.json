@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "swa start ./dist --api-location ./api"
+    "dev": "npm run serve & swa start http://localhost:8080 --api-location ./api"
   },
   "dependencies": {
     "bootstrap-vue": "^2.22.0",
