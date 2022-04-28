@@ -61,6 +61,9 @@
                   I agree on receiving communication from Capgemini's recruitment team
                 </b-form-checkbox>
               </div>
+              <div v-if="showErrorMessage" class="text-danger mt-4">
+                Something went wrong. Try again later
+              </div>
               <div class="mb-2 mt-4">
                 <button class="submit-button" type="submit">Submit</button>
               </div>
@@ -90,6 +93,7 @@ export default {
   name: "App",
   data() {
     return {
+      showErrorMessage: false,
       submitted: false,
       message: "",
       fullName: "",
@@ -102,7 +106,6 @@ export default {
   },
   methods: {
     async submitForm() {
-      //does the post
       const { message } = await (await fetch(
         '/api/contestor', 
         {
@@ -118,8 +121,15 @@ export default {
             profession: this.profession,
             recruitment: this.recruitment
           }),
+        }).then(async (response) => {
+          if (!response.ok) {
+            return Promise.reject();
+          }
+        })
+        .catch((error) => {
+          this.showErrorMessage = true;
         })).json();
-        //when done post the message
+        
       this.message = message;
       this.submitted = true;
     }
