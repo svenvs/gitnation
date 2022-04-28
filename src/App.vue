@@ -105,6 +105,9 @@ export default {
     };
   },
   methods: {
+    cleanInput(input) {
+      return input.replace(/[^ a-z0-9]/gi, '');
+    },
     async submitForm() {
       let { message } = Object;
       message = await (await fetch(
@@ -115,11 +118,11 @@ export default {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            fullName: this.fullName,
+            fullName: this.cleanInput(this.fullName),
             email: this.email,
-            phone: this.phone,
-            country: this.country,
-            profession: this.profession,
+            phone: this.cleanInput(this.phone),
+            country: this.cleanInput(this.country),
+            profession: this.cleanInput(this.profession),
             recruitment: this.recruitment
           }),
         }).then((response) => {
@@ -133,7 +136,6 @@ export default {
           this.showErrorMessage = true;
           this.submitted = false;
         }));
-      
       this.message = message;
     }
   }
