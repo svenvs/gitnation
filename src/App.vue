@@ -2,12 +2,12 @@
   <div class="background-image">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12  offset-md-1 col-md-5 justify-content-center align-self-center">
+        <div class="col-12 offset-md-1 col-md-5 mt-md-0 mt-5 justify-content-center align-self-center">
           <h1 class="bold mb-4"> Win a Switch & a future at Capgemini! </h1>
           <p> Get inspired and start the conversation about what Capgemini could offer you. By entering the raffle you have a change to win a Nintendo Switch and an informal conversation with Capgemini regarding your potential future at Capgemini! </p>
         </div>
-        <div class="col-6 col-md-6 justify-content-end align-self-right">
-          <div class="bg-white w-30 rounded mt-5 p-4 mr-5 mb-5">
+        <div class="col-md-6 justify-content-end align-self-right">
+          <div class="bg-white w-30 rounded mt-5 p-4 mb-5 mr-0 mr-xl-5">
             <div class="row justify-content-start mt-4 mb-4 ml-1"> 
               <div class="col-3 cap-logo">
                 <img src="./assets/Logo.svg" />
@@ -18,7 +18,7 @@
               </div>
             </div>
             
-            <form class="mr-3 ml-3 form-floating">
+            <form class="mr-0 mr-xl-3 ml-0 ml-xl-3 form-floating">
               <div class="mt-2 mb-1">Full name</div>
               <b-form-input type="text" 
                 v-model="fullName"
@@ -54,7 +54,7 @@
                   <input type="checkbox" value="remember-me" /> I agree on receiving communication from Capgemini's recruitment team
                 </label>
               </div>
-              <div class="mb-2">
+              <div class="mb-2 mt-4">
                 <button type="submit" class="submit-button">Submit</button>
               </div>
             </form>
