@@ -97,14 +97,14 @@ export default {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            fullName: this.fullName,
-            email: this.email,
-            phone: this.phone,
-            country: this.country,
-            profession: this.profession,
-            recruitment: this.recruitment,
-          }),
+          body: {
+            "fullName": this.fullName,
+            "email": this.email,
+            "phone": this.phone,
+            "country": this.country,
+            "profession": this.profession,
+            "recruitment": this.recruitment
+          },
         })).json();
         //when done post the message
       this.message = message;
