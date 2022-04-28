@@ -15,8 +15,10 @@ p {
   color: #fff;
 }
 
-h1.bold, p {
-  text-shadow: -1px 4px 15px rgb(22, 22, 22);
+.message {
+  h1.bold, p {
+    text-shadow: -1px 4px 15px rgb(22, 22, 22);
+  }
 }
 
 input.form-control {
@@ -50,6 +52,15 @@ body, html {
     display: block;
     margin: auto;
     color:#272936;
+    transition: 0.3s;
+  }
+
+  .submit-button:hover {
+    background-color: #00d5d0;
+  }
+
+  .submit-button:active {
+    background-color: #00B2A2;
   }
 
   .submitted {

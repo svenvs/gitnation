@@ -2,7 +2,7 @@
   <div class="background-image">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 offset-md-1 col-md-5 mt-md-0 mt-5 justify-content-center align-self-center">
+        <div class="message col-12 offset-md-1 col-md-5 mt-md-0 mt-5 justify-content-center align-self-center">
           <h1 class="bold mb-4"> Win a Switch & a future at Capgemini! </h1>
           <p> Get inspired and start the conversation about what Capgemini could offer you. By entering the raffle you have a change to win a Nintendo Switch and an informal conversation with Capgemini regarding your potential future at Capgemini! </p>
         </div>
@@ -62,7 +62,7 @@
                 </b-form-checkbox>
               </div>
               <div class="mb-2 mt-4">
-                <button type="submit" class="submit-button">Submit</button>
+                <button class="submit-button" type="submit">Submit</button>
               </div>
             </form>
             <div v-else class="mr-0 mr-xl-3 ml-0 ml-xl-3 submitted text-center">
