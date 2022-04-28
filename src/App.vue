@@ -126,7 +126,7 @@ export default {
             return Promise.reject();
           }
         })
-        .catch((error) => {
+        .catch(() => {
           this.showErrorMessage = true;
         })).json();
         
