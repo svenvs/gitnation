@@ -4,6 +4,7 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+
 h1.bold {
   font-weight: 500;
   font-size: 3.5rem;
@@ -12,6 +13,10 @@ h1.bold {
 
 p {
   color: #fff;
+}
+
+h1.bold, p {
+  text-shadow: -1px 4px 15px rgb(22, 22, 22);
 }
 
 input.form-control {
@@ -24,18 +29,18 @@ body, html {
 }
   
   .background-image {
-    background-image: url("images/landing.jpg"), linear-gradient(rgba(19, 0, 71, 0.927),rgba(25, 0, 56, 0.5));
+    background-image: url("images/landing.jpg"), linear-gradient(#2B0A3D,rgba(25, 0, 56, 0.5));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: overlay;
     background-attachment: fixed;
-    min-height: 100vh;;
+    min-height: 100vh;
   }
   
   .submit-button {
     font-family: 'Ubuntu', sans-serif;
-    background-color: aqua;
+    background-color: #00e6E3;
     border: none;
     border-radius: 50px;
     padding: 20px;
@@ -44,7 +49,7 @@ body, html {
     max-width: 300px;
     display: block;
     margin: auto;
-    color:rgb(94, 94, 94);
+    color:#272936;
   }
 
   .submitted {
@@ -55,6 +60,6 @@ body, html {
 
     p {
       color: #000;
-      font-size: 3em;
+      font-size: 2.5em;
     }
   }
