@@ -6,7 +6,8 @@
           <h1 class="bold mb-4"> Win a Switch & a future at Capgemini! </h1>
           <p> Get inspired and start the conversation about what Capgemini could offer you. By entering the raffle you have a change to win a Nintendo Switch and an informal conversation with Capgemini regarding your potential future at Capgemini! </p>
         </div>
-        <div class="col-md-6 justify-content-end align-self-right">
+        <div class="col-md-6 justify-content-end align-self-right"
+              :class="!isSubmitted ? 'align-items-center' : ''">
           <div class="bg-white w-30 rounded mt-5 p-4 mb-5 mr-0 mr-xl-5">
             <div class="row justify-content-end text-center mt-4 mb-4 ml-1"> 
               <div class="col-3 cap-logo">
@@ -16,11 +17,15 @@
               </div>
             </div>
             
-            <div class="mr-0 mr-xl-3 ml-0 ml-xl-3">
-              <h1> Please fill out the form </h1>
-            </div>
             
-            <form class="mr-0 mr-xl-3 ml-0 ml-xl-3 form-floating" @submit="submitForm">
+            <form class="mr-0 mr-xl-3 ml-0 ml-xl-3 form-floating" 
+                  @submit.prevent="submitForm"
+                  v-if="isSubmitted"
+            >
+              <div class="mr-0 mr-xl-3 ml-0 ml-xl-3">
+                <h1> Please fill out the form </h1>
+              </div>
+
               <div class="mt-2 mb-1">Full name</div>
               <b-form-input type="text" 
                 v-model="fullName"
@@ -68,6 +73,9 @@
                 <button type="submit" class="submit-button">Submit</button>
               </div>
             </form>
+            <div v-else class="mr-0 mr-xl-3 ml-0 ml-xl-3 submitted text-center">
+              <p>Your response has been submitted!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -85,6 +93,7 @@ export default {
   name: "App",
   data() {
     return {
+      isSubmitted: false,
       message: "",
       fullName: "",
       email: "",
