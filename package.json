@@ -9,6 +9,7 @@
     "dev": "npm run serve & swa start http://localhost:8080 --api-location ./api"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.22.0",
     "core-js": "^3.6.4",
     "influence-design-system-testing": "^1.0.0",
     "vue": "^2.6.11"
@@ -20,6 +21,8 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "sass": "^1.51.0",
+    "sass-loader": "^10.2.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
