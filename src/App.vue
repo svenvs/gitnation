@@ -101,12 +101,13 @@ export default {
       phone: "",
       country: "",
       profession: "",
-      recruitment: ""
+      recruitment: false,
     };
   },
   methods: {
     async submitForm() {
-      const { message } = await (await fetch(
+      let { message } = Object;
+      message = await (await fetch(
         '/api/contestor', 
         {
           method: 'post',
@@ -121,17 +122,19 @@ export default {
             profession: this.profession,
             recruitment: this.recruitment
           }),
-        }).then(async (response) => {
+        }).then((response) => {
           if (!response.ok) {
             return Promise.reject();
+          } else {
+            this.submitted = true;
           }
         })
         .catch(() => {
           this.showErrorMessage = true;
-        })).json();
-        
+          this.submitted = false;
+        }));
+      
       this.message = message;
-      this.submitted = true;
     }
   }
 };
