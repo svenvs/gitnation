@@ -50,9 +50,9 @@
               />
 
               <div class="checkbox mt-4 mb-2">
-                <label>
-                  <input type="checkbox" value="remember-me" /> I agree on receiving communication from Capgemini's recruitment team
-                </label>
+                <b-form-checkbox v-model="recruitment">
+                  I agree on receiving communication from Capgemini's recruitment team
+                </b-form-checkbox>
               </div>
               <div class="mb-2 mt-4">
                 <button type="submit" class="submit-button">Submit</button>
@@ -85,10 +85,7 @@ export default {
     };
   },
   methods: {
-    async submitForm(e) {
-      e.preventDefault();
-      console.log(' hello');
-      console.log(this.fullName);
+    async submitForm() {
       //does the post
       const { message } = await (await fetch(
         '/api/contestor', 
@@ -97,18 +94,17 @@ export default {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: {
-            "fullName": this.fullName,
-            "email": this.email,
-            "phone": this.phone,
-            "country": this.country,
-            "profession": this.profession,
-            "recruitment": this.recruitment
-          },
+          body: JSON.stringify({
+            fullName: this.fullName,
+            email: this.email,
+            phone: this.phone,
+            country: this.country,
+            profession: this.profession,
+            recruitment: this.recruitment
+          }),
         })).json();
         //when done post the message
       this.message = message;
-      console.log(message);
     }
   }
 };
