@@ -8,14 +8,16 @@
         </div>
         <div class="col-md-6 justify-content-end align-self-right">
           <div class="bg-white w-30 rounded mt-5 p-4 mb-5 mr-0 mr-xl-5">
-            <div class="row justify-content-start mt-4 mb-4 ml-1"> 
+            <div class="row justify-content-end text-center mt-4 mb-4 ml-1"> 
               <div class="col-3 cap-logo">
-                <img src="./assets/Logo.svg" />
+                <a href="https://careersatcapgemini.nl/?is-preferred-domain=true">
+                  <img src="./assets/Logo.svg" />
+                </a>
               </div>
-              |
-              <div class="col">
-                what is this logo?
-              </div>
+            </div>
+            
+            <div class="mr-0 mr-xl-3 ml-0 ml-xl-3">
+              <h1> Please fill out the form </h1>
             </div>
             
             <form class="mr-0 mr-xl-3 ml-0 ml-xl-3 form-floating" @submit="submitForm">
