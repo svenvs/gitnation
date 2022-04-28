@@ -22,35 +22,43 @@
               <div class="mt-2 mb-1">Full name</div>
               <b-form-input type="text" 
                 v-model="fullName"
-                placeholder="Captain America">
+                placeholder="Captain America"
+                required>
               </b-form-input>
 
               <div class="mt-3 mb-1">Country</div>
               <b-form-input
                 v-model="country"
-                placeholder="United States "
+                placeholder="United States"
+                required
               ></b-form-input>
 
               <div class="mt-3 mb-1">Profession</div>
               <b-form-input
                 v-model="profession"
                 placeholder="Super hero"
+                required
               ></b-form-input>
 
               <div class="mt-3 mb-1">Phone number</div>
               <b-form-input
                 v-model="phone"
-                placeholder="+31612345678 "
+                placeholder="+31612345678"
+                minLength=7
+                maxLength=15
+                required
               ></b-form-input>
 
               <div class="mt-3 mb-1">Email Address</div>
               <b-form-input
                 placeholder="bestsuperhero@theavengers.com"
+                type="email"
                 v-model="email"
+                required
               />
 
               <div class="checkbox mt-4 mb-2">
-                <b-form-checkbox v-model="recruitment">
+                <b-form-checkbox v-model="recruitment" required>
                   I agree on receiving communication from Capgemini's recruitment team
                 </b-form-checkbox>
               </div>
