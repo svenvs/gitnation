@@ -18,7 +18,7 @@
               </div>
             </div>
             
-            <form class="mr-0 mr-xl-3 ml-0 ml-xl-3 form-floating">
+            <form class="mr-0 mr-xl-3 ml-0 ml-xl-3 form-floating" @submit="submitForm">
               <div class="mt-2 mb-1">Full name</div>
               <b-form-input type="text" 
                 v-model="fullName"
@@ -77,16 +77,18 @@ export default {
     return {
       message: "",
       fullName: "",
+      email: "",
       phone: "",
       country: "",
       profession: "",
-      email: "",
       recruitment: ""
     };
   },
   methods: {
     async submitForm(e) {
       e.preventDefault();
+      console.log(' hello');
+      console.log(this.fullName);
       //does the post
       const { message } = await (await fetch(
         '/api/contestor', 
@@ -106,9 +108,8 @@ export default {
         })).json();
         //when done post the message
       this.message = message;
+      console.log(message);
     }
   }
 };
 </script>
-
-<style scoped></style>
